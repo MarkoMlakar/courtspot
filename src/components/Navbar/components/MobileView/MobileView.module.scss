@@ -1,0 +1,27 @@
+@use '../../../../mixins/variables' as *;
+@use '../../../../mixins/mediaSize' as *;
+
+.view {
+  position: absolute;
+  width: 100vw;
+  height: calc(100vh - 8rem);
+  top: 8rem;
+  display: none;
+  flex-direction: column;
+  padding: 9.8rem 0 0 3.1rem;
+  background-color: $bg-color;
+
+  @include mediaMobile {
+    display: flex;
+  }
+
+  @include mediaTablet {
+    display: flex;
+  }
+}
+
+.view__items {
+  display: flex;
+  flex-direction: column;
+  gap: 5.2rem;
+}

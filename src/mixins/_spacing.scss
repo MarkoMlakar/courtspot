@@ -1,0 +1,22 @@
+@use 'sass:map';
+
+$spacing-xl: 12rem;
+$spacing-l: 8rem;
+$spacing-m: 5rem;
+$spacing-s: 5rem;
+$spacing-xs: 0.1rem;
+$spacing-map: (
+  'xl': $spacing-xl,
+  'l': $spacing-l,
+  'm': $spacing-m,
+  's': $spacing-s,
+  'xs': $spacing-xs,
+);
+
+@mixin spacing($property, $size, $multiplier: 1) {
+  @if map.has-key($spacing-map, $size) {
+    #{$property}: calc(map.get($spacing-map, $size) * #{$multiplier});
+  } @else {
+    @error "Invalid spacing size: #{$size}. Use xl, l, m, s or xs";
+  }
+}

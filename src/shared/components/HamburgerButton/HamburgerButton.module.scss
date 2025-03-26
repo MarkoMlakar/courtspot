@@ -1,0 +1,15 @@
+@use '../../../mixins/variables' as *;
+
+.navbar__hbMenu {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.line {
+  width: 100%;
+  height: 12%;
+  background-color: $btn-color-grey;
+}

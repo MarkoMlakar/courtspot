@@ -1,0 +1,36 @@
+@use '../../../../mixins/variables' as *;
+@use '../../../../mixins/mediaSize' as *;
+
+.navbar__items {
+  display: none;
+  gap: 4.5rem;
+  @include mediaDesktop {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.navbar__items__visible {
+  display: flex;
+}
+
+.navbar__items__row {
+  flex-direction: row;
+}
+
+.navbar__items__column {
+  flex-direction: column;
+}
+
+.navbar__itemsText {
+  font-family: $font-montserrat;
+  color: #949ea0;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  letter-spacing: 0;
+}
+
+.navbar__itemsText_authenticated {
+  font-family: $font-ubuntu;
+}

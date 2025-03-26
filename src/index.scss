@@ -1,0 +1,39 @@
+@use 'mixins/variables' as *;
+@use 'mixins/spacing' as *;
+@use 'mixins/mediaSize' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-montserrat;
+  color: $text-color;
+  background-color: $bg-color;
+  line-height: 1.6;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none; // Also prevent underline on hover if needed
+  }
+}

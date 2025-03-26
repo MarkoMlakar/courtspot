@@ -1,0 +1,18 @@
+<svg viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Racket Head -->
+  <ellipse cx="100" cy="100" rx="70" ry="90" stroke="#A7E7D6" stroke-width="10" fill="none"/>
+  
+  <!-- Strings -->
+  <defs>
+    <pattern id="stringPattern" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 0 0 L 10 10 M 10 0 L 0 10" stroke="#FFC1C1" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <ellipse cx="100" cy="100" rx="65" ry="85" fill="url(#stringPattern)"/>
+  
+  <!-- Handle -->
+  <rect x="85" y="190" width="30" height="150" fill="#FFCD94" stroke="#D9A16D" stroke-width="5" rx="5"/>
+
+  <!-- Grip -->
+  <rect x="85" y="250" width="30" height="100" fill="#A7E7D6" stroke="#77C2A5" stroke-width="5" rx="5"/>
+</svg>

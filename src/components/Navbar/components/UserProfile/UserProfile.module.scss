@@ -1,0 +1,34 @@
+@use '../../../../mixins/variables' as *;
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: center;
+  cursor: pointer;
+}
+
+.container__column {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.container__row {
+  flex-direction: row;
+  align-items: center;
+}
+
+.container__text {
+  color: #949ea0;
+  font-family: $font-ubuntu;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  letter-spacing: 0;
+}
+
+.avatarImage {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
