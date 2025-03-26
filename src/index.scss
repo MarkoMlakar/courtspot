@@ -37,3 +37,7 @@ a {
     text-decoration: none; // Also prevent underline on hover if needed
   }
 }
+
+div {
+  -webkit-tap-highlight-color: transparent;
+}

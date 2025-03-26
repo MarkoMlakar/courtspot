@@ -43,7 +43,7 @@ $breakpoint-xxl: 153.6rem;
 }
 
 @mixin mediaTablet {
-  @media (max-width: #{$breakpoint-m}) {
+  @media (min-width: #{$breakpoint-s}) {
     @content;
   }
 }
