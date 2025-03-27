@@ -10,9 +10,9 @@ interface RoundedButtonProps {
 
 export const RoundedButton = ({
   text,
-  width = 14,
-  height = 4,
-  fontSize = 1.4,
+  width = 8.75,
+  height = 2.5,
+  fontSize = 0.875,
 }: RoundedButtonProps) => {
   const roundedBtnStyle = cx(styles.button, styles.button_rounded);
 

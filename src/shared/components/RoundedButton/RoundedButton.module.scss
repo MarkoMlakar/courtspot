@@ -10,15 +10,16 @@
   font-family: $font-montserrat;
   color: $bg-color;
   font-weight: 500;
-  line-height: 1.4rem;
+  line-height: 0.875rem;
   letter-spacing: 0;
 }
+
 .button_rounded {
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
-  border-radius: 8rem;
+  border-radius: 5rem;
   background: linear-gradient(270deg, #ecbcb3 0%, #eaa79e 100%);
   box-shadow: 0 1.5rem 2rem 0 #eaa89f33;
 }

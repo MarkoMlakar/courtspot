@@ -1,25 +1,21 @@
-// Media breakpoints
-$breakpoint-xs: 0;
-$breakpoint-s: 64rem;
-$breakpoint-m: 76.8rem;
-$breakpoint-l: 102.4rem;
-$breakpoint-xl: 128rem;
-$breakpoint-xxl: 153.6rem;
+$breakpoint-xs: 30rem; // Small phones
+$breakpoint-m: 48rem; // Tablets
+$breakpoint-l: 80rem; // Desktop
 
-@mixin mediaDesktop {
-  @media (min-width: #{$breakpoint-m}) {
+@mixin mediaMobile {
+  @media (max-width: #{$breakpoint-m - 0.06rem}) {
     @content;
   }
 }
 
 @mixin mediaTablet {
-  @media (min-width: #{$breakpoint-s}) and (max-width: #{$breakpoint-m - 0.1rem}) {
+  @media (min-width: #{$breakpoint-m}) and (max-width: #{$breakpoint-l - 0.06rem}) {
     @content;
   }
 }
 
-@mixin mediaMobile {
-  @media (max-width: #{$breakpoint-s - 0.1rem}) {
+@mixin mediaDesktop {
+  @media (min-width: #{$breakpoint-l}) {
     @content;
   }
 }

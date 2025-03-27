@@ -9,7 +9,9 @@ import { CloseButton } from '../../shared/components/CloseButton/CloseButton.tsx
 
 export const Navbar = () => {
   const [isMenuClicked, setIsMenuClicked] = useState(false);
-  const onHamburgerBtnClick = () => setIsMenuClicked(!isMenuClicked);
+  const onHamburgerBtnClick = () => {
+    setIsMenuClicked(!isMenuClicked);
+  };
   return (
     <>
       <nav className={styles.navbar}>

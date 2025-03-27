@@ -1,10 +1,10 @@
 @use 'sass:map';
 
-$spacing-xl: 12rem;
-$spacing-l: 8rem;
-$spacing-m: 5rem;
-$spacing-s: 5rem;
-$spacing-xs: 0.1rem;
+$spacing-xl: 7.5rem;
+$spacing-l: 5rem;
+$spacing-m: 3.125rem;
+$spacing-s: 3.125rem;
+$spacing-xs: 0.0625rem;
 $spacing-map: (
   'xl': $spacing-xl,
   'l': $spacing-l,

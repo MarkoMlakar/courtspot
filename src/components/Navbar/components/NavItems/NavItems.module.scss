@@ -3,7 +3,7 @@
 
 .navbar__items {
   display: none;
-  gap: 4.5rem;
+  gap: 2.81rem;
   @include mediaDesktop {
     display: flex;
     align-items: center;
@@ -26,8 +26,8 @@
   font-family: $font-montserrat;
   color: #949ea0;
   font-weight: 500;
-  font-size: 1.4rem;
-  line-height: 1.4rem;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
   letter-spacing: 0;
 }
 
