@@ -6,18 +6,14 @@
   width: 100%;
   height: 100%;
   top: 8rem;
-  display: none;
+  display: flex;
   flex-direction: column;
   padding: 9.8rem 0 0 3.1rem;
   background-color: $bg-color;
   z-index: 1;
 
-  @include mediaMobile {
-    display: flex;
-  }
-
-  @include mediaTablet {
-    display: flex;
+  @include mediaDesktop {
+    display: none;
   }
 }
 

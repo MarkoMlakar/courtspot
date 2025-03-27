@@ -2,9 +2,9 @@ import styles from './SearchBar.module.scss';
 import searchIcon from '../../../assets/pl-icon-search.svg';
 
 export const SearchBar = () => {
-  const handleKeyDown = event => {
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
-      event.target.blur(); // Close the keyboard by blurring the input
+      event.currentTarget.blur(); // Close the keyboard by blurring the input
     }
   };
   return (
