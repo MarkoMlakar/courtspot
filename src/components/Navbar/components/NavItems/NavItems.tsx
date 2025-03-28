@@ -13,7 +13,7 @@ export const NavItems = ({
   flexDirection = 'row',
   isDisplayed = true,
 }: NavItemProps) => {
-  const isLoggedIn = false;
+  const isLoggedIn = true;
 
   const baseClassStyle = cx(
     styles.navbar__items,

@@ -21,6 +21,8 @@ const Home = () => {
           <div className={styles.test}></div>
           <div className={styles.test}></div>
           <div className={styles.test}></div>
+          <div className={styles.test}></div>
+          <div className={styles.test}></div>
         </div>
       </div>
     </div>

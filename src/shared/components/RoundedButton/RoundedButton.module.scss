@@ -20,6 +20,10 @@
   justify-content: center;
   border: none;
   border-radius: 5rem;
-  background: linear-gradient(270deg, #ecbcb3 0%, #eaa79e 100%);
+  background: linear-gradient(
+    270deg,
+    $primary-color-light 0%,
+    $primary-color 100%
+  );
   box-shadow: 0 1.5rem 2rem 0 #eaa89f33;
 }

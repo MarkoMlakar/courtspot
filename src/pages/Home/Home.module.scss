@@ -15,7 +15,8 @@
   height: 31.25rem;
   padding-top: 6.5rem;
   padding-bottom: 10rem;
-  background: url('../../assets/courtImage.png') no-repeat center;
+  // background: url('../../assets/courtImage.png') no-repeat center center;
+  background-color: $primary-color;
 
   @include mediaTablet {
     padding-top: 9.63rem;
@@ -90,8 +91,8 @@
 .test {
   width: 10.5rem;
   height: 13.38rem;
-  background-color: $btn-color-primary;
-  border-radius: 10;
+  background-color: $primary-color;
+  border-radius: 2rem;
 
   @include mediaTablet {
     width: 14.38rem;
