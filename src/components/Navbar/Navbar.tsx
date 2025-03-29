@@ -7,21 +7,18 @@ import { HamburgerButton } from '../../shared/components/HamburgerButton/Hamburg
 import { useState, useEffect } from 'react';
 import { CloseButton } from '../../shared/components/CloseButton/CloseButton.tsx';
 import { useScrollLock } from '../../shared/hooks/useScrollLock';
-import { useOrientation } from '../../shared/hooks/useOrientation';
 import { useMediaQuery } from '../../shared/hooks/useMediaQuery';
 import { MEDIA_QUERIES } from '../../shared/constants/breakpoints';
 
 export const Navbar = () => {
   const [isMenuClicked, setIsMenuClicked] = useState(false);
-  const orientation = useOrientation();
-  const isLandscape = orientation === 'landscape';
 
   // Check for desktop mode only
   const isDesktop = useMediaQuery(MEDIA_QUERIES.desktop);
   const isMobileOrTablet = !isDesktop;
 
   // Use our scroll lock hook with the orientation option
-  useScrollLock(isMenuClicked, { isLandscape });
+  useScrollLock(isMenuClicked);
 
   const onHamburgerBtnClick = () => {
     setIsMenuClicked(!isMenuClicked);
