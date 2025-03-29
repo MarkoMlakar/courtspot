@@ -9,7 +9,7 @@ $breakpoint-l: 80rem; // Desktop
 }
 
 @mixin mediaTablet {
-  @media (min-width: #{$breakpoint-m}) and (max-width: #{$breakpoint-l - 0.06rem}) {
+  @media (min-width: #{$breakpoint-m}) {
     @content;
   }
 }

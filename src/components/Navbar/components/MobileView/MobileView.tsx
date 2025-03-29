@@ -2,7 +2,7 @@ import styles from './MobileView.module.scss';
 import { NavItems } from '../NavItems/NavItems.tsx';
 import { useOrientation } from '../../../../shared/hooks/useOrientation';
 
-export const MobileView = () => {
+export const MobileView = ({ onClose }) => {
   const orientation = useOrientation();
   const isLandscape = orientation === 'landscape';
 
@@ -16,7 +16,7 @@ export const MobileView = () => {
         }
       >
         <div className={styles.view__items}>
-          <NavItems flexDirection={'column'} />
+          <NavItems flexDirection={'column'} onLinkClick={onClose} />
         </div>
       </div>
     </div>

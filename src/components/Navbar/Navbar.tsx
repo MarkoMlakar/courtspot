@@ -24,6 +24,10 @@ export const Navbar = () => {
     setIsMenuClicked(!isMenuClicked);
   };
 
+  const onCloseMenu = () => {
+    setIsMenuClicked(false);
+  };
+
   // Close mobile menu when transitioning to desktop view
   useEffect(() => {
     if (isDesktop && isMenuClicked) {
@@ -51,7 +55,7 @@ export const Navbar = () => {
           </div>
         )}
       </nav>
-      {isMenuClicked && <MobileView />}
+      {isMenuClicked && <MobileView onClose={onCloseMenu} />}
     </>
   );
 };

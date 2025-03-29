@@ -1,0 +1,31 @@
+@use '../../../mixins/_variables.scss' as *;
+@use '../../../mixins/_mediaSize.scss' as *;
+
+.sightingsLabel {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background-color: $bg-transparent;
+
+  &__filled {
+    background-color: $primary-color;
+  }
+}
+
+.sightingsLabel__text {
+  color: $bg-color;
+  font-family: $font-ubuntu;
+  font-size: 0.6rem;
+  font-weight: 400;
+
+  @include mediaTablet {
+    font-size: 0.75rem;
+  }
+
+  @include mediaDesktop {
+    font-size: 0.75rem;
+  }
+}

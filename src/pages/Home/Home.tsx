@@ -1,4 +1,5 @@
 import { SearchBar } from '../../shared/components/SearchBar/SearchBar';
+import { Card } from '../../shared/components/Card/Card';
 import styles from './Home.module.scss';
 
 const Home = () => {
@@ -15,14 +16,13 @@ const Home = () => {
       </div>
       <div className={styles.home__cardContainer}>
         <div className={styles.home__cardContainer__items}>
-          <div className={styles.test}></div>
-          <div className={styles.test}></div>
-          <div className={styles.test}></div>
-          <div className={styles.test}></div>
-          <div className={styles.test}></div>
-          <div className={styles.test}></div>
-          <div className={styles.test}></div>
-          <div className={styles.test}></div>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
         </div>
       </div>
     </div>

@@ -7,13 +7,15 @@ import AuthButtons from '../AuthButtons/AuthButtons.tsx';
 interface NavItemProps {
   flexDirection?: 'row' | 'column';
   isDisplayed?: boolean;
+  onLinkClick?: () => void;
 }
 
 export const NavItems = ({
   flexDirection = 'row',
   isDisplayed = true,
+  onLinkClick,
 }: NavItemProps) => {
-  const isLoggedIn = true;
+  const isLoggedIn = false;
 
   const baseClassStyle = cx(
     styles.navbar__items,
@@ -28,24 +30,36 @@ export const NavItems = ({
     styles.navbar__itemsText,
     isLoggedIn && styles.navbar__itemsText_authenticated
   );
+
+  const handleLinkClick = () => {
+    if (onLinkClick) {
+      onLinkClick();
+    }
+  };
+
   return (
-    <>
-      <div className={baseClassStyle}>
-        <Link to="/courts" className={navLinkStyles}>
-          Courts
-        </Link>
-        <Link to="/latest-visits" className={navLinkStyles}>
-          Latest Visits
-        </Link>
-        <Link to="/favorites" className={navLinkStyles}>
-          Favorites
-        </Link>
-      </div>
+    <div className={baseClassStyle}>
+      <Link to="/" className={navLinkStyles} onClick={handleLinkClick}>
+        Home
+      </Link>
+      <Link to="/courts" className={navLinkStyles} onClick={handleLinkClick}>
+        Courts
+      </Link>
+      <Link
+        to="/latest-visits"
+        className={navLinkStyles}
+        onClick={handleLinkClick}
+      >
+        Latest Visits
+      </Link>
+      <Link to="/favorites" className={navLinkStyles} onClick={handleLinkClick}>
+        Favorites
+      </Link>
       {isLoggedIn ? (
         <UserProfile flexDirection={flexDirection} />
       ) : (
         <AuthButtons flexDirection={flexDirection} />
       )}
-    </>
+    </div>
   );
 };
