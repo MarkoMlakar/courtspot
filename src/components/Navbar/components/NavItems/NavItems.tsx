@@ -6,25 +6,19 @@ import AuthButtons from '../AuthButtons/AuthButtons.tsx';
 
 interface NavItemProps {
   flexDirection?: 'row' | 'column';
-  isDisplayed?: boolean;
   onLinkClick?: () => void;
 }
 
 export const NavItems = ({
   flexDirection = 'row',
-  isDisplayed = true,
   onLinkClick,
 }: NavItemProps) => {
   const isLoggedIn = false;
 
-  const baseClassStyle = cx(
-    styles.navbar__items,
-    isDisplayed && styles.navbar__items__visible,
-    {
-      [styles.navbar__items__column]: flexDirection === 'column',
-      [styles.navbar__items__row]: flexDirection === 'row',
-    }
-  );
+  const baseClassStyle = cx(styles.navbar__items, {
+    [styles.navbar__items__column]: flexDirection === 'column',
+    [styles.navbar__items__row]: flexDirection === 'row',
+  });
 
   const navLinkStyles = cx(
     styles.navbar__itemsText,

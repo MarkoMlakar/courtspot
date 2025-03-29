@@ -2,16 +2,11 @@
 @use '../../../../mixins/mediaSize' as *;
 
 .navbar__items {
-  display: none;
+  display: flex;
   gap: 2rem;
   @include mediaDesktop {
-    display: flex;
     align-items: center;
   }
-}
-
-.navbar__items__visible {
-  display: flex;
 }
 
 .navbar__items__row {

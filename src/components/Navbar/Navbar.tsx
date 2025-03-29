@@ -55,7 +55,7 @@ export const Navbar = () => {
           </div>
         )}
       </nav>
-      {isMenuClicked && <MobileView onClose={onCloseMenu} />}
+      {isMenuClicked && <MobileView onCloseMenu={onCloseMenu} />}
     </>
   );
 };
