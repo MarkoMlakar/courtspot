@@ -7,7 +7,7 @@ const Home = () => {
     <div className={styles.home}>
       <div className={styles.home__stage}>
         <h1 className={styles.home__stage__title}>
-          Discover tennis courts around you
+          Discover courts around you
         </h1>
         <h2 className={styles.home__stage__subtitle}>
           Explore between more than 10.000 courts worldwide
