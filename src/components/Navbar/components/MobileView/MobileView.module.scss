@@ -2,23 +2,60 @@
 @use '../../../../mixins/mediaSize' as *;
 
 .view {
-  position: absolute;
+  position: fixed;
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 5rem);
   top: 5rem;
+  left: 0;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: 6.13rem 0 0 1.94rem;
   background-color: $bg-color;
   z-index: 1;
+  pointer-events: none;
 
   @include mediaDesktop {
     display: none;
   }
 }
 
+.viewLandscape {
+  position: fixed;
+  width: 100%;
+  height: calc(100vh - 5rem);
+  top: 5rem;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: $bg-color;
+  z-index: 1;
+  pointer-events: none;
+
+  @include mediaDesktop {
+    display: none;
+  }
+}
+
+.view__items__container {
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 6.13rem 0 8rem 1.94rem;
+  pointer-events: auto;
+}
+
+.view__items__landscape {
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 3rem 0 8rem 1.94rem;
+  pointer-events: auto;
+}
+
 .view__items {
   display: flex;
   flex-direction: column;
   gap: 3.25rem;
+  padding-bottom: 2rem;
 }
