@@ -11,8 +11,6 @@
   display: flex;
   flex-direction: column;
   background-color: $bg-color;
-  z-index: 1;
-  pointer-events: none;
 
   @include mediaDesktop {
     display: none;
@@ -22,15 +20,13 @@
 .viewLandscape {
   position: fixed;
   width: 100%;
-  height: calc(100vh - 5rem);
+  height: 100%;
   top: 5rem;
   left: 0;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   background-color: $bg-color;
-  z-index: 1;
-  pointer-events: none;
 
   @include mediaDesktop {
     display: none;
@@ -40,17 +36,16 @@
 .view__items__container {
   height: 100%;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+
   padding: 6.13rem 0 8rem 1.94rem;
-  pointer-events: auto;
 }
 
 .view__items__landscape {
   height: 100%;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
   padding: 3rem 0 8rem 1.94rem;
-  pointer-events: auto;
 }
 
 .view__items {

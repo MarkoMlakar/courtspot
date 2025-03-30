@@ -10,7 +10,7 @@ const Home = () => {
           Discover courts around you
         </h1>
         <h2 className={styles.home__stage__subtitle}>
-          Explore between more than 10.000 courts worldwide
+          Explore between more than 10.000 sport courts worldwide
         </h2>
         <SearchBar />
       </div>

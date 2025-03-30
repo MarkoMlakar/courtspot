@@ -23,7 +23,7 @@ export const useScrollLock = (isLocked: boolean) => {
     // Apply scroll lock if we're in mobile or tablet view and menu is opened
     if (isLocked && isMobileOrTablet) {
       // Save current scroll position before locking
-      scrollPositionRef.current = window.pageYOffset;
+      scrollPositionRef.current = window.scrollY;
 
       // Apply the same body locking behavior for both portrait and landscape
       document.body.style.overflow = 'hidden';
