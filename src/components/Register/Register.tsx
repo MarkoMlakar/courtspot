@@ -1,12 +1,14 @@
 import { InputField } from '../../shared/components/InputField/InputField';
 import { RoundedButton } from '../../shared/components/RoundedButton/RoundedButton';
 import styles from './Register.module.scss';
+import { useStores } from '../../stores';
+import { ModalType } from '../../models/modal';
 
-const Register = ({
-  setIsRegisterModalOpen,
-}: {
-  setIsRegisterModalOpen: () => void;
-}) => {
+const Register = () => {
+  const { modalStore } = useStores();
+
+  const handleRegisterClose = () => modalStore.closeModal(ModalType.REGISTER);
+
   return (
     <div className={styles.register}>
       <div className={styles.register__container}>
@@ -47,10 +49,7 @@ const Register = ({
             borderRadius={0.19}
           />
         </div>
-        <span
-          className={styles.noRegister__text}
-          onClick={setIsRegisterModalOpen}
-        >
+        <span className={styles.noRegister__text} onClick={handleRegisterClose}>
           I don't want to register
         </span>
       </div>

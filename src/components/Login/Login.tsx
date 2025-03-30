@@ -1,11 +1,14 @@
 import { InputField } from '../../shared/components/InputField/InputField';
 import { RoundedButton } from '../../shared/components/RoundedButton/RoundedButton';
 import styles from './Login.module.scss';
-const Login = ({
-  setIsLoginModalOpen,
-}: {
-  setIsLoginModalOpen: () => void;
-}) => {
+import { useStores } from '../../stores';
+import { ModalType } from '../../models/modal';
+
+const Login = () => {
+  const { modalStore } = useStores();
+
+  const handleLoginClose = () => modalStore.closeModal(ModalType.LOGIN);
+
   return (
     <div className={styles.login}>
       <div className={styles.login__container}>
@@ -26,7 +29,7 @@ const Login = ({
             borderRadius={0.19}
           />
         </div>
-        <span className={styles.noLogin__text} onClick={setIsLoginModalOpen}>
+        <span className={styles.noLogin__text} onClick={handleLoginClose}>
           I don't want to login
         </span>
       </div>

@@ -6,16 +6,12 @@ import AuthButtons from '../AuthButtons/AuthButtons.tsx';
 
 interface NavItemProps {
   flexDirection?: 'row' | 'column';
-  onLinkClick?: () => void;
-  onLoginClick?: () => void;
-  onRegisterClick?: () => void;
+  onMenuClose?: () => void;
 }
 
 export const NavItems = ({
   flexDirection = 'row',
-  onLinkClick,
-  onLoginClick,
-  onRegisterClick,
+  onMenuClose,
 }: NavItemProps) => {
   const isLoggedIn = false;
 
@@ -29,28 +25,26 @@ export const NavItems = ({
     isLoggedIn && styles.navbar__itemsText_authenticated
   );
 
-  const handleLinkClick = () => {
-    if (onLinkClick) {
-      onLinkClick();
-    }
+  const handleItemClick = () => {
+    onMenuClose?.();
   };
 
   return (
     <div className={baseClassStyle}>
-      <Link to="/" className={navLinkStyles} onClick={handleLinkClick}>
+      <Link to="/" className={navLinkStyles} onClick={handleItemClick}>
         Home
       </Link>
-      <Link to="/courts" className={navLinkStyles} onClick={handleLinkClick}>
+      <Link to="/courts" className={navLinkStyles} onClick={handleItemClick}>
         Courts
       </Link>
       <Link
         to="/latest-visits"
         className={navLinkStyles}
-        onClick={handleLinkClick}
+        onClick={handleItemClick}
       >
         Latest Visits
       </Link>
-      <Link to="/favorites" className={navLinkStyles} onClick={handleLinkClick}>
+      <Link to="/favorites" className={navLinkStyles} onClick={handleItemClick}>
         Favorites
       </Link>
       {isLoggedIn ? (
@@ -58,8 +52,7 @@ export const NavItems = ({
       ) : (
         <AuthButtons
           flexDirection={flexDirection}
-          onLoginClick={onLoginClick}
-          onRegisterClick={onRegisterClick}
+          onCloseMenu={handleItemClick}
         />
       )}
     </div>

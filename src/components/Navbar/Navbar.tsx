@@ -9,8 +9,9 @@ import { CloseButton } from '../../shared/components/CloseButton/CloseButton.tsx
 import { useScrollLock } from '../../shared/hooks/useScrollLock';
 import { useMediaQuery } from '../../shared/hooks/useMediaQuery';
 import { MEDIA_QUERIES } from '../../shared/constants/breakpoints';
-
+import { useStores } from '../../stores';
 export const Navbar = () => {
+  const { modalStore } = useStores();
   const [isMenuClicked, setIsMenuClicked] = useState(false);
 
   // Check for desktop mode only
@@ -22,6 +23,7 @@ export const Navbar = () => {
 
   const onHamburgerBtnClick = () => {
     setIsMenuClicked(!isMenuClicked);
+    modalStore.closeAllModals();
   };
 
   const onCloseMenu = () => {
@@ -38,7 +40,11 @@ export const Navbar = () => {
   return (
     <>
       <nav className={styles.navbar}>
-        <Link to="/" className={styles.navbar__heading}>
+        <Link
+          to="/"
+          className={styles.navbar__heading}
+          onClick={() => modalStore.closeAllModals()}
+        >
           <img
             src={logo}
             alt="CourtSpot Logo"
