@@ -1,5 +1,5 @@
 import styles from './Card.module.scss';
-import { FavoriteButton } from '../FovoriteButton/FavoriteButton';
+import { FavoriteButton } from '../FavoriteButton/FavoriteButton';
 import { SightingsLabel } from '../SightingsLabel/SightingsLabel';
 
 export const Card = () => {

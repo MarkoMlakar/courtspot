@@ -7,11 +7,15 @@ import AuthButtons from '../AuthButtons/AuthButtons.tsx';
 interface NavItemProps {
   flexDirection?: 'row' | 'column';
   onLinkClick?: () => void;
+  onLoginClick?: () => void;
+  onRegisterClick?: () => void;
 }
 
 export const NavItems = ({
   flexDirection = 'row',
   onLinkClick,
+  onLoginClick,
+  onRegisterClick,
 }: NavItemProps) => {
   const isLoggedIn = false;
 
@@ -52,7 +56,11 @@ export const NavItems = ({
       {isLoggedIn ? (
         <UserProfile flexDirection={flexDirection} />
       ) : (
-        <AuthButtons flexDirection={flexDirection} />
+        <AuthButtons
+          flexDirection={flexDirection}
+          onLoginClick={onLoginClick}
+          onRegisterClick={onRegisterClick}
+        />
       )}
     </div>
   );

@@ -1,0 +1,68 @@
+@use '../../mixins/variables' as *;
+
+.login {
+  background-color: white;
+  height: 20.19rem;
+  width: 27.5rem;
+  border-radius: 0.19rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login__container {
+  height: 100%;
+  width: 100%;
+  padding: 1.88rem 1.88rem 0 1.88rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.login__title {
+  text-align: center;
+  font-family: $font-ubuntu;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  letter-spacing: 0;
+  color: #334144;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.63rem;
+  margin-top: 1.88rem;
+}
+
+.login__nameFields {
+  display: flex;
+  flex-direction: row;
+  gap: 0.625rem;
+}
+
+.login__dateOfBirth {
+  width: 100%;
+  &::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+}
+
+.login__btn {
+  width: 100%;
+  margin-top: 1.25rem;
+  height: 3.13rem;
+}
+
+.noLogin__text {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
+  font-family: $font-ubuntu;
+  font-size: 0.81rem;
+  font-weight: 400;
+  color: #949ea0;
+  opacity: 0.5;
+  cursor: pointer;
+}
