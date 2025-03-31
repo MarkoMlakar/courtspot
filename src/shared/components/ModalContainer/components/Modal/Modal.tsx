@@ -8,21 +8,12 @@ interface ModalProps {
 }
 
 export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
-  if (!isOpen) return null;
-
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden'; // Prevent background scrolling
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
     return () => {
       document.body.style.overflow = 'auto';
     };
   }, [isOpen]);
-
-  if (!isOpen) return null;
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -41,6 +32,8 @@ export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
       document.removeEventListener('keydown', handleKeyDown);
     };
   }, [onClose]);
+
+  if (!isOpen) return null;
 
   return createPortal(
     <div

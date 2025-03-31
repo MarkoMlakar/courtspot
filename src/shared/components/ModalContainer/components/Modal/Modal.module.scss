@@ -1,5 +1,6 @@
-@use '../../../mixins/mediaSize' as *;
-@use '../../../mixins/variables' as *;
+@use '../../../../../mixins/mediaSize' as *;
+@use '../../../../../mixins/variables' as *;
+
 .modal {
   position: fixed;
   width: 100%;

@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite';
-import { Modal } from '../../../shared/components/Modal/Modal';
+import { Modal } from './components/Modal/Modal';
 import { useStores } from '../../../stores';
 import { ModalType } from '../../../models/modal';
 import Login from '../../../components/Login/Login';

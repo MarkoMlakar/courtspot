@@ -20,10 +20,10 @@ class ModalStore {
     };
   }
 
-  openModal = (type: ModalType, props?: Record<string, any>) => {
+  openModal = (type: ModalType) => {
     // Don't open the same modal twice
     if (!this.isModalOpen(type)) {
-      this.activeModals.push({ type, props });
+      this.activeModals.push({ type });
     }
   };
 
