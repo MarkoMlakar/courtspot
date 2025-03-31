@@ -13,7 +13,7 @@ export const NavItems = ({
   flexDirection = 'row',
   onMenuClose,
 }: NavItemProps) => {
-  const isLoggedIn = false;
+  const isLoggedIn = true;
 
   const baseClassStyle = cx(styles.navbar__items, {
     [styles.navbar__items__column]: flexDirection === 'column',
@@ -48,7 +48,10 @@ export const NavItems = ({
         Favorites
       </Link>
       {isLoggedIn ? (
-        <UserProfile flexDirection={flexDirection} />
+        <UserProfile
+          flexDirection={flexDirection}
+          onMenuClose={handleItemClick}
+        />
       ) : (
         <AuthButtons
           flexDirection={flexDirection}

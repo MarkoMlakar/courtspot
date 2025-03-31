@@ -1,0 +1,57 @@
+@use '../../mixins/variables' as *;
+@use '../../mixins/mediaSize' as *;
+
+.profile {
+  position: relative;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.19rem;
+
+  @include mediaDesktop {
+    height: 38.13rem;
+    width: 36.88rem;
+  }
+}
+
+.profile__closeButton {
+  display: none;
+
+  @include mediaDesktop {
+    height: 1.25rem;
+    width: 1.25rem;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.25rem;
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.profile__container {
+  height: 100%;
+  width: 100%;
+  padding: 4.19rem 2.38rem 6.56rem 2.38rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @include mediaDesktop {
+    padding: 3.75rem 6.88rem 3.69rem 6.88rem;
+  }
+}
+
+.profile__logout {
+  width: 9.38rem;
+  height: 2.5rem;
+  margin-top: 3.13rem;
+  align-self: center;
+}
+
+.profile__fields {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.75rem;
+  gap: 1.63rem;
+}

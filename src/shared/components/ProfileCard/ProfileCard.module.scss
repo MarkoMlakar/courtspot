@@ -1,0 +1,40 @@
+@use '../../../mixins/_mediaSize.scss' as *;
+@use '../../../mixins/_variables.scss' as *;
+
+.profileCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.88rem;
+}
+
+.profileCard__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.38rem;
+}
+
+.profileCard__avatar {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+
+.profileCard__title {
+  font-family: $font-ubuntu;
+  font-size: 1.56rem;
+  line-height: 1.56rem;
+  font-weight: 300;
+  color: #334144;
+}
+
+.profileCard__subtitle {
+  font-family: $font-ubuntu;
+  font-size: 0.81rem;
+  line-height: 0.81rem;
+  font-weight: 400;
+  color: #949ea0;
+}

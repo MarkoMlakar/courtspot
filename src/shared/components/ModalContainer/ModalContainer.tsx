@@ -4,6 +4,7 @@ import { useStores } from '../../../stores';
 import { ModalType } from '../../../models/modal';
 import Login from '../../../components/Login/Login';
 import Register from '../../../components/Register/Register';
+import { Profile } from '../../../components/Profile/Profile';
 
 const ModalContainer = observer(() => {
   const { modalStore } = useStores();
@@ -16,6 +17,10 @@ const ModalContainer = observer(() => {
   const isRegisterOpen = modalStore.isModalOpen(ModalType.REGISTER);
   const handleRegisterClose = () => modalStore.closeModal(ModalType.REGISTER);
 
+  // Handle profile modal
+  const isProfileOpen = modalStore.isModalOpen(ModalType.PROFILE);
+  const handleProfileClose = () => modalStore.closeModal(ModalType.PROFILE);
+
   return (
     <>
       {isLoginOpen && (
@@ -27,6 +32,12 @@ const ModalContainer = observer(() => {
       {isRegisterOpen && (
         <Modal isOpen={true} onClose={handleRegisterClose}>
           <Register />
+        </Modal>
+      )}
+
+      {isProfileOpen && (
+        <Modal isOpen={true} onClose={handleProfileClose}>
+          <Profile />
         </Modal>
       )}
 

@@ -1,30 +1,31 @@
 import styles from './UserProfile.module.scss';
 import avatarImage from '../../../../assets/img_avatar.png';
 import cx from 'classnames';
-const openProfileInfo = () => {
-  alert('Profile Info TODO');
-};
+import { useStores } from '../../../../stores';
+import { ModalType } from '../../../../models/modal';
 
 interface UserProfileProps {
   flexDirection?: string;
+  onMenuClose?: () => void;
 }
 
-const UserProfile = ({ flexDirection = 'row' }: UserProfileProps) => {
+const UserProfile = ({
+  flexDirection = 'row',
+  onMenuClose,
+}: UserProfileProps) => {
+  const { modalStore } = useStores();
+  const openProfileInfo = () => {
+    modalStore.openModal(ModalType.PROFILE);
+    onMenuClose?.();
+  };
   const containerStyles = cx(styles.container, {
     [styles.container__column]: flexDirection === 'column',
     [styles.container__row]: flexDirection === 'row',
   });
   return (
-    <div className={containerStyles}>
-      <span className={styles.container__text} onClick={openProfileInfo}>
-        Marko Mlakar
-      </span>
-      <img
-        className={styles.avatarImage}
-        src={avatarImage}
-        onClick={openProfileInfo}
-        alt="Avatar"
-      ></img>
+    <div className={containerStyles} onClick={openProfileInfo}>
+      <span className={styles.container__text}>Marko Mlakar</span>
+      <img className={styles.avatarImage} src={avatarImage} alt="Avatar"></img>
     </div>
   );
 };
