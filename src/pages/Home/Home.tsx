@@ -1,6 +1,6 @@
 import { SearchBar } from '../../shared/components/SearchBar/SearchBar';
-import { Card } from '../../shared/components/Card/Card';
 import styles from './Home.module.scss';
+import { CardContainer } from '../../shared/components/CardContainer/CardContainer.tsx';
 
 const Home = () => {
   return (
@@ -14,17 +14,7 @@ const Home = () => {
         </h2>
         <SearchBar />
       </div>
-      <div className={styles.home__cardContainer}>
-        <div className={styles.home__cardContainer__items}>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-        </div>
-      </div>
+      <CardContainer />
     </div>
   );
 };

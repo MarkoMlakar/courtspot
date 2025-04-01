@@ -16,7 +16,7 @@ export const SearchBar = () => {
         onKeyDown={handleKeyDown}
       ></input>
       <button className={styles.searchBar__icon} type="submit">
-        <img src={searchIcon}></img>
+        <img src={searchIcon} alt="Search Icon"></img>
       </button>
     </div>
   );

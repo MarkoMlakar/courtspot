@@ -13,7 +13,7 @@ export const NavItems = ({
   flexDirection = 'row',
   onMenuClose,
 }: NavItemProps) => {
-  const isLoggedIn = true;
+  const isLoggedIn = false;
 
   const baseClassStyle = cx(styles.navbar__items, {
     [styles.navbar__items__column]: flexDirection === 'column',

@@ -3,11 +3,18 @@ import { ProfileCard } from '../../shared/components/ProfileCard/ProfileCard';
 import { RoundedButton } from '../../shared/components/RoundedButton/RoundedButton';
 import { TextField } from './components/TextField/TextField';
 import styles from './Profile.module.scss';
+import { useStores } from '../../stores';
+import { ModalType } from '../../models/modal.ts';
 
 export const Profile = () => {
+  const { modalStore } = useStores();
+
+  const onCloseClick = () => {
+    modalStore.closeModal(ModalType.PROFILE);
+  };
   return (
     <div className={styles.profile}>
-      <div className={styles.profile__closeButton}>
+      <div className={styles.profile__closeButton} onClick={onCloseClick}>
         <CloseButton />
       </div>
       <div className={styles.profile__container}>

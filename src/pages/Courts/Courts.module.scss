@@ -1,4 +1,38 @@
-.base {
-  padding: 1rem;
-  background: transparent;
+.courts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3.13rem;
+  padding: 1.25rem;
+}
+
+.courts__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.courts__category {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.courts_categoryItem {
+  align-content: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  border: 0.1rem solid #c95917;
+  border-radius: 1rem;
+  box-shadow: 0 1.5rem 2rem 0 #eaa89f33;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #c95917;
+    color: white;
+  }
 }
