@@ -39,11 +39,6 @@ export const useScrollLock = (isLocked: boolean) => {
       document.body.style.width = '';
       document.body.style.height = '';
       document.body.style.top = '';
-
-      if (isMobileOrTablet) {
-        // Restore scroll position
-        window.scrollTo(0, scrollY || scrollPositionRef.current);
-      }
     }
 
     // Cleanup on unmount or when dependencies change
