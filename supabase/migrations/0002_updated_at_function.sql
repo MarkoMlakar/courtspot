@@ -29,4 +29,9 @@ CREATE TRIGGER update_locations_updated_at
 CREATE TRIGGER update_comments_updated_at
     BEFORE UPDATE ON comments
     FOR EACH ROW
+    EXECUTE FUNCTION update_updated_at_column();
+
+CREATE TRIGGER update_sports_updated_at
+    BEFORE UPDATE ON sports
+    FOR EACH ROW
     EXECUTE FUNCTION update_updated_at_column(); 

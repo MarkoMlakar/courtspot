@@ -22,6 +22,10 @@ DROP POLICY IF EXISTS "Anyone can view sightings" ON sightings;
 DROP POLICY IF EXISTS "Only authenticated users can create sightings" ON sightings;
 DROP POLICY IF EXISTS "Only sighting creators can update sightings" ON sightings;
 DROP POLICY IF EXISTS "Only sighting creators can delete sightings" ON sightings;
+DROP POLICY IF EXISTS "Allow authenticated users to read sports" ON sports;
+DROP POLICY IF EXISTS "Allow authenticated users to insert sports" ON sports;
+DROP POLICY IF EXISTS "Allow authenticated users to update sports" ON sports;
+DROP POLICY IF EXISTS "Allow authenticated users to delete sports" ON sports;
 
 -- Disable RLS on all tables
 ALTER TABLE IF EXISTS users DISABLE ROW LEVEL SECURITY;
@@ -31,12 +35,14 @@ ALTER TABLE IF EXISTS court_images DISABLE ROW LEVEL SECURITY;
 ALTER TABLE IF EXISTS comments DISABLE ROW LEVEL SECURITY;
 ALTER TABLE IF EXISTS favorites DISABLE ROW LEVEL SECURITY;
 ALTER TABLE IF EXISTS sightings DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS sports DISABLE ROW LEVEL SECURITY;
 
 -- Drop triggers
 DROP TRIGGER IF EXISTS update_users_updated_at ON users;
 DROP TRIGGER IF EXISTS update_courts_updated_at ON courts;
 DROP TRIGGER IF EXISTS update_locations_updated_at ON locations;
 DROP TRIGGER IF EXISTS update_comments_updated_at ON comments;
+DROP TRIGGER IF EXISTS update_sports_updated_at ON sports;
 
 -- Drop the trigger function
 DROP FUNCTION IF EXISTS update_updated_at_column();
@@ -47,6 +53,7 @@ DROP TABLE IF EXISTS favorites;
 DROP TABLE IF EXISTS comments;
 DROP TABLE IF EXISTS court_images;
 DROP TABLE IF EXISTS courts;
+DROP TABLE IF EXISTS sports;
 DROP TABLE IF EXISTS locations;
 DROP TABLE IF EXISTS users;
 

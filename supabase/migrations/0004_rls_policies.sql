@@ -105,4 +105,32 @@ CREATE POLICY "Only sighting creators can update sightings"
 
 CREATE POLICY "Only sighting creators can delete sightings"
     ON sightings FOR DELETE
-    USING (auth.uid() = user_id); 
+    USING (auth.uid() = user_id);
+
+-- Enable RLS on sports table
+ALTER TABLE sports ENABLE ROW LEVEL SECURITY;
+
+-- Allow authenticated users to read sports
+CREATE POLICY "Allow authenticated users to read sports"
+ON sports FOR SELECT
+TO authenticated
+USING (true);
+
+-- Allow authenticated users to insert sports (admin only)
+CREATE POLICY "Allow authenticated users to insert sports"
+ON sports FOR INSERT
+TO authenticated
+WITH CHECK (true);
+
+-- Allow authenticated users to update sports (admin only)
+CREATE POLICY "Allow authenticated users to update sports"
+ON sports FOR UPDATE
+TO authenticated
+USING (true)
+WITH CHECK (true);
+
+-- Allow authenticated users to delete sports (admin only)
+CREATE POLICY "Allow authenticated users to delete sports"
+ON sports FOR DELETE
+TO authenticated
+USING (true); 
