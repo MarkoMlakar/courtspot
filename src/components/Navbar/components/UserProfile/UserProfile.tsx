@@ -23,10 +23,10 @@ const UserProfile = ({
     [styles.container__row]: flexDirection === 'row',
   });
   return (
-    <div className={containerStyles} onClick={openProfileInfo}>
+    <button className={containerStyles} onClick={openProfileInfo}>
       <span className={styles.container__text}>Marko Mlakar</span>
       <img className={styles.avatarImage} src={avatarImage} alt="Avatar"></img>
-    </div>
+    </button>
   );
 };
 
