@@ -26,7 +26,10 @@ export const NavItems = ({
   );
 
   const handleItemClick = () => {
-    onMenuClose?.();
+    // Small delay to ensure route change completes before closing menu
+    setTimeout(() => {
+      onMenuClose?.();
+    }, 100);
   };
 
   return (
@@ -48,15 +51,9 @@ export const NavItems = ({
         Favorites
       </Link>
       {isLoggedIn ? (
-        <UserProfile
-          flexDirection={flexDirection}
-          onMenuClose={handleItemClick}
-        />
+        <UserProfile flexDirection={flexDirection} onMenuClose={onMenuClose} />
       ) : (
-        <AuthButtons
-          flexDirection={flexDirection}
-          onCloseMenu={handleItemClick}
-        />
+        <AuthButtons flexDirection={flexDirection} onCloseMenu={onMenuClose} />
       )}
     </div>
   );
