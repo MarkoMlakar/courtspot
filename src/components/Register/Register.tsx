@@ -49,9 +49,9 @@ const Register = () => {
             borderRadius={0.19}
           />
         </div>
-        <span className={styles.noRegister__text} onClick={handleRegisterClose}>
+        <button className={styles.noRegister__text} onClick={handleRegisterClose}>
           I don't want to register
-        </span>
+        </button>
       </div>
     </div>
   );

@@ -29,9 +29,9 @@ const Login = () => {
             borderRadius={0.19}
           />
         </div>
-        <span className={styles.noLogin__text} onClick={handleLoginClose}>
+        <button className={styles.noLogin__text} onClick={handleLoginClose}>
           I don't want to login
-        </span>
+        </button>
       </div>
     </div>
   );
