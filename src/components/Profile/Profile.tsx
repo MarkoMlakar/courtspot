@@ -7,11 +7,17 @@ import { useStores } from '../../stores';
 import { ModalType } from '../../models/modal.ts';
 
 export const Profile = () => {
-  const { modalStore } = useStores();
+  const { modalStore, authStore } = useStores();
 
   const onCloseClick = () => {
     modalStore.closeModal(ModalType.PROFILE);
   };
+
+  const onLogoutClick = () => {
+    authStore.signOut();
+    onCloseClick();
+  };
+
   return (
     <div className={styles.profile}>
       <div className={styles.profile__closeButton} onClick={onCloseClick}>
@@ -26,7 +32,7 @@ export const Profile = () => {
           <TextField title="Email Address" value="markomlakar@gmail.com" />
         </div>
         <div className={styles.profile__logout}>
-          <RoundedButton text="Logout" borderRadius={0.19} />
+          <RoundedButton text="Logout" borderRadius={0.19} onClick={onLogoutClick}/>
         </div>
       </div>
     </div>

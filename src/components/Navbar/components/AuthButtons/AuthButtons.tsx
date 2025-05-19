@@ -35,11 +35,8 @@ const AuthButtons = observer(
         >
           <span className={styles.button__text_highlighted}>Login</span>
         </button>
-        <div
-          className={styles.register__container}
-          onClick={() => onOpenModal(ModalType.REGISTER)}
-        >
-          <RoundedButton text={'New Account'} />
+        <div className={styles.register__container}>
+          <RoundedButton text={'New Account'} onClick={() => onOpenModal(ModalType.REGISTER)} />
         </div>
       </div>
     );

@@ -3,17 +3,20 @@ import { Link } from 'react-router';
 import cx from 'classnames';
 import UserProfile from '../UserProfile/UserProfile.tsx';
 import AuthButtons from '../AuthButtons/AuthButtons.tsx';
+import { useStores } from '../../../../stores/index.ts';
+import { observer } from 'mobx-react-lite';
 
 interface NavItemProps {
   flexDirection?: 'row' | 'column';
   onMenuClose?: () => void;
 }
 
-export const NavItems = ({
+export const NavItems = observer(function NavItems({
   flexDirection = 'row',
   onMenuClose,
-}: NavItemProps) => {
-  const isLoggedIn = false;
+}: NavItemProps) {
+  const { authStore } = useStores();
+  const isLoggedIn = authStore.isAuthenticated;
 
   const baseClassStyle = cx(styles.navbar__items, {
     [styles.navbar__items__column]: flexDirection === 'column',
@@ -57,4 +60,4 @@ export const NavItems = ({
       )}
     </div>
   );
-};
+});
