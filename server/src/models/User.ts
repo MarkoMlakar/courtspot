@@ -55,6 +55,21 @@ export class UserModel extends BaseModel {
     };
   }
 
+  // Convert date string to Date object when setting
+  $beforeInsert() {
+    super.$beforeInsert();
+    if (this.date_of_birth && typeof this.date_of_birth === 'string') {
+      this.date_of_birth = new Date(this.date_of_birth);
+    }
+  }
+
+  $beforeUpdate() {
+    super.$beforeUpdate();
+    if (this.date_of_birth && typeof this.date_of_birth === 'string') {
+      this.date_of_birth = new Date(this.date_of_birth);
+    }
+  }
+
   // Relations
   static get relationMappings() {
     return {
