@@ -1,6 +1,6 @@
 $breakpoint-xs: 30rem; // Small phones
 $breakpoint-m: 48rem; // Tablets
-$breakpoint-l: 80rem; // Desktop
+$breakpoint-l: 65rem; // Desktop
 
 @mixin mediaMobile {
   @media (max-width: #{$breakpoint-m - 0.06rem}) {

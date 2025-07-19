@@ -44,11 +44,13 @@ class AuthService {
    */
   async register(userData: RegisterRequest): Promise<ApiResponse<User>> {
     try {
-      const response = await api.post<ApiResponse<User>>(
-        this.baseUrl,
-        userData
-      );
-      return response.data;
+      const response = await api.post<User>(this.baseUrl, userData);
+
+      // Backend returns user object directly, not wrapped in ApiResponse
+      return {
+        data: response.data,
+        success: true,
+      };
     } catch (error: any) {
       // Handle specific error cases
       if (error.response?.status === 409) {

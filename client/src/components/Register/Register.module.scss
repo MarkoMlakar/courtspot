@@ -12,7 +12,6 @@
   justify-content: center;
 
   @include mediaDesktop {
-    height: 27.69rem;
     width: 27.5rem;
   }
 }
@@ -59,6 +58,17 @@
   width: 100%;
   margin-top: 1.25rem;
   height: 3.13rem;
+}
+
+.register__error {
+  background-color: $secondary-color-error;
+  color: $primary-color-error;
+  padding: 0.75rem;
+  border-radius: 0.24rem;
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  text-align: center;
+  font-family: $font-ubuntu;
 }
 
 .noRegister__text {
