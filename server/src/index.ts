@@ -1,13 +1,25 @@
 import express from "express";
+import cors from "cors";
 import { checkConnection } from "./database/connection";
-import './database/objection'; // Initialize Objection
-import routes from './routes';
+import "./database/objection"; // Initialize Objection
+import routes from "./routes";
 
 const app = express();
+
+// Configure CORS
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "http://localhost:3000"],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
 app.use(express.json());
 
 // Mount all routes
-app.use('/', routes);
+app.use("/", routes);
 
 // Test database connection before starting the server
 const startServer = async () => {
@@ -15,7 +27,7 @@ const startServer = async () => {
     // Check database connection
     const isConnected = await checkConnection();
     if (!isConnected) {
-      throw new Error('Failed to connect to database');
+      throw new Error("Failed to connect to database");
     }
 
     // Start the server
@@ -23,7 +35,7 @@ const startServer = async () => {
       console.log("Server is running on port 3000");
     });
   } catch (error) {
-    console.error('Failed to start server:', error);
+    console.error("Failed to start server:", error);
     process.exit(1);
   }
 };
