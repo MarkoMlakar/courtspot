@@ -38,7 +38,7 @@ export const Profile = observer(() => {
   };
 
   return (
-    <div className={styles.profile}>
+    <div className={styles.profile} data-testid="profile-modal">
       <div className={styles.profile__closeButton} onClick={onCloseClick}>
         <CloseButton />
       </div>

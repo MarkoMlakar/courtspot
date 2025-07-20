@@ -164,3 +164,22 @@ export const expectUserToBeLoggedIn = async (page: Page, username: string) => {
     `User profile not found or does not contain username: ${username}`
   );
 };
+
+export const openProfileModal = async (page: Page) => {
+  // Check if we're on mobile by looking for hamburger menu
+  const hamburgerMenu = page.locator('[class*="hbMenu"]').first();
+
+  if (await hamburgerMenu.isVisible()) {
+    // Mobile view - open hamburger menu first
+    await hamburgerMenu.click();
+
+    // Wait for mobile menu to appear
+    await page.waitForSelector('[class*="view"]');
+
+    // Now click the user profile button inside the mobile menu
+    await page.locator('[class*="view"]').getByTestId("user-profile").click();
+  } else {
+    // Desktop view - click directly
+    await page.getByTestId("user-profile").click();
+  }
+};
