@@ -60,6 +60,46 @@ export class UserController {
     }
   }
 
+  // Login user
+  static async loginUser(req: Request, res: Response) {
+    try {
+      const { email, password } = req.body;
+
+      // Validate required fields
+      if (!email || !password) {
+        return res
+          .status(400)
+          .json({ error: "Email and password are required" });
+      }
+
+      // Find user by email
+      const user = await UserModel.query()
+        .where("email", email)
+        .where("is_deleted", false)
+        .first();
+
+      if (!user) {
+        return res.status(401).json({ error: "Invalid email or password" });
+      }
+
+      // Verify password
+      const isPasswordValid = await bcrypt.compare(
+        password,
+        user.password_hash
+      );
+      if (!isPasswordValid) {
+        return res.status(401).json({ error: "Invalid email or password" });
+      }
+
+      // Return user without password hash
+      const { password_hash, ...userWithoutPassword } = user;
+      res.json(userWithoutPassword);
+    } catch (error) {
+      console.error("Error logging in user:", error);
+      res.status(500).json({ error: "Failed to login" });
+    }
+  }
+
   // Get all users
   static async getAllUsers(req: Request, res: Response) {
     try {

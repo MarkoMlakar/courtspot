@@ -64,17 +64,20 @@ class AuthService {
   }
 
   /**
-   * Login user (placeholder for future implementation)
+   * Login user
    */
   async login(credentials: LoginRequest): Promise<ApiResponse<AuthResponse>> {
     try {
-      // This endpoint doesn't exist yet in your backend
-      // You'll need to implement it later
-      const response = await api.post<ApiResponse<AuthResponse>>(
-        '/auth/login',
-        credentials
-      );
-      return response.data;
+      const response = await api.post<User>('/users/login', credentials);
+
+      // Backend returns user object directly, not wrapped in ApiResponse
+      return {
+        data: {
+          user: response.data,
+          token: undefined, // For future JWT implementation
+        },
+        success: true,
+      };
     } catch (error: any) {
       if (error.response?.status === 401) {
         throw new Error('Invalid email or password');
