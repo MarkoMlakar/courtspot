@@ -7,6 +7,7 @@ interface RoundedButtonProps {
   borderRadius?: number;
   onClick?: () => void;
   disabled?: boolean;
+  'data-testid'?: string;
 }
 
 export const RoundedButton = ({
@@ -15,6 +16,7 @@ export const RoundedButton = ({
   borderRadius = 5,
   onClick,
   disabled = false,
+  'data-testid': dataTestId,
 }: RoundedButtonProps) => {
   const roundedBtnStyle = cx(styles.button, styles.button_rounded);
   const textStyle = cx(styles.button__text, {
@@ -28,6 +30,7 @@ export const RoundedButton = ({
         style={{ borderRadius: `${borderRadius}rem` }}
         onClick={onClick}
         disabled={disabled}
+        data-testid={dataTestId}
       >
         <span className={textStyle} style={{ fontSize: `${fontSize}rem` }}>
           {text}

@@ -71,11 +71,13 @@ const Register = observer(() => {
   };
 
   return (
-    <div className={styles.register}>
+    <div className={styles.register} data-testid="register-modal">
       <div className={styles.register__container}>
         <span className={styles.register__title}>Create an Account</span>
         {authStore.hasError && (
-          <div className={styles.register__error}>{authStore.error}</div>
+          <div className={styles.register__error} data-testid="register-error">
+            {authStore.error}
+          </div>
         )}
 
         <div className={styles.register__form}>
@@ -132,12 +134,14 @@ const Register = observer(() => {
             borderRadius={0.19}
             onClick={handleSubmit}
             disabled={authStore.isLoading}
+            data-testid="create-account-button"
           />
         </div>
         <button
           className={styles.noRegister__text}
           onClick={handleRegisterClose}
           type="button"
+          data-testid="close-register-button"
         >
           I don't want to register
         </button>

@@ -29,7 +29,11 @@ const UserProfile = ({
   const username = authStore.currentUser?.username || 'User';
 
   return (
-    <button className={containerStyles} onClick={openProfileInfo}>
+    <button
+      className={containerStyles}
+      onClick={openProfileInfo}
+      data-testid="user-profile"
+    >
       <span className={styles.container__text}>{username}</span>
       <img className={styles.avatarImage} src={avatarImage} alt="Avatar"></img>
     </button>
