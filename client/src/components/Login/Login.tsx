@@ -63,7 +63,7 @@ const Login = observer(() => {
   };
 
   return (
-    <div className={styles.login}>
+    <div className={styles.login} data-testid="login-modal">
       <div className={styles.login__container}>
         <span className={styles.login__title}>Welcome Back!</span>
         {authStore.hasError && (

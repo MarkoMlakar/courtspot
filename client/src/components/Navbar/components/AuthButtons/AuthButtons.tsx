@@ -32,6 +32,7 @@ const AuthButtons = observer(
           className={styles.button}
           aria-label="Log in to your account"
           onClick={() => onOpenModal(ModalType.LOGIN)}
+          data-testid="login-button"
         >
           <span className={styles.button__text_highlighted}>Login</span>
         </button>

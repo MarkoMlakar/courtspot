@@ -51,6 +51,38 @@ export const openRegisterModal = async (page: Page) => {
   }
 };
 
+export const openLoginModal = async (page: Page) => {
+  // Check if we're on mobile by looking for hamburger menu
+  const hamburgerMenu = page.locator('[class*="hbMenu"]').first();
+
+  if (await hamburgerMenu.isVisible()) {
+    // Mobile view - open hamburger menu first
+    await hamburgerMenu.click();
+
+    // Wait for mobile menu to appear
+    await page.waitForSelector('[class*="view"]');
+
+    // Now click the Login button inside the mobile menu
+    // Use a more specific selector to target the login button inside the mobile menu
+    await page.locator('[class*="view"]').getByTestId("login-button").click();
+  } else {
+    // Desktop view - click directly
+    await page.getByTestId("login-button").first().click();
+  }
+};
+
+export const fillLoginForm = async (
+  page: Page,
+  email: string,
+  password: string
+) => {
+  // Fill email
+  await page.getByPlaceholder("example@email.com").fill(email);
+
+  // Fill password
+  await page.locator('input[type="password"]').fill(password);
+};
+
 export const fillRegistrationForm = async (page: Page, user: TestUser) => {
   // Fill first name
   await page.getByPlaceholder("Enter your first name").fill(user.firstName);
@@ -73,9 +105,12 @@ export const fillRegistrationForm = async (page: Page, user: TestUser) => {
 
 export const waitForModalToClose = async (page: Page) => {
   // Wait for modal to disappear
-  await page.waitForSelector('[data-testid="register-modal"]', {
-    state: "hidden",
-  });
+  await page.waitForSelector(
+    '[data-testid="register-modal"], [data-testid="login-modal"]',
+    {
+      state: "hidden",
+    }
+  );
 };
 
 export const expectUserToBeLoggedIn = async (page: Page, username: string) => {
