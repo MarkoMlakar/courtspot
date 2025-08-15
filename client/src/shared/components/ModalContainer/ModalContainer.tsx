@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite';
 import { Modal } from './components/Modal/Modal';
 import { useStores } from '../../../stores';
-import { ModalType } from '../../../models/modal';
+import { ModalType } from '../../../types/modal';
 import Login from '../../../components/Login/Login';
 import Register from '../../../components/Register/Register';
 import { Profile } from '../../../components/Profile/Profile';

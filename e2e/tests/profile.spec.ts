@@ -172,7 +172,9 @@ test.describe("Profile Flow", () => {
       page.getByTestId("profile-modal").locator('img[alt="Avatar"]')
     ).toBeVisible();
     await expect(
-      page.getByTestId("profile-modal").getByText("Marko Mlakar")
+      page
+        .getByTestId("profile-modal")
+        .getByText(`${testUser.firstName} ${testUser.lastName}`)
     ).toBeVisible();
     await expect(
       page.getByTestId("profile-modal").getByText("100 sightings")

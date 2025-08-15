@@ -1,5 +1,5 @@
 import { makeObservable, observable, action, computed } from 'mobx';
-import { ModalType, ModalData } from '../models/modal';
+import { ModalType, ModalData } from '../types/modal';
 
 class ModalStore {
   activeModals: ModalData[] = [];

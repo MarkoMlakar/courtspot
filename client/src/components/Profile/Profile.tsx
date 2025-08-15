@@ -5,7 +5,8 @@ import { RoundedButton } from '../../shared/components/RoundedButton/RoundedButt
 import { TextField } from './components/TextField/TextField';
 import styles from './Profile.module.scss';
 import { useStores } from '../../stores';
-import { ModalType } from '../../models/modal.ts';
+import { ModalType } from '../../types/modal';
+import { formatDateOfBirth } from '../../shared/utils';
 
 export const Profile = observer(() => {
   const { modalStore, authStore } = useStores();
@@ -19,23 +20,9 @@ export const Profile = observer(() => {
     modalStore.closeModal(ModalType.PROFILE);
   };
 
-  // Get user data from auth store
   const user = authStore.currentUser;
 
-  // Format date of birth for display
-  const formatDateOfBirth = (dateString: string | null | undefined) => {
-    if (!dateString) return '';
-    try {
-      const date = new Date(dateString);
-      return date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      });
-    } catch {
-      return dateString;
-    }
-  };
+  // Import the utility function from shared utils
 
   return (
     <div className={styles.profile} data-testid="profile-modal">

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useStores } from '../../stores';
-import { ModalType } from '../../models/modal';
+import { ModalType } from '../../types/modal';
 
 export const useModalCleanup = (type: ModalType, cleanupFn: () => void) => {
   const { modalStore } = useStores();

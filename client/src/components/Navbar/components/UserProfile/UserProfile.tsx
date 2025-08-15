@@ -2,7 +2,7 @@ import styles from './UserProfile.module.scss';
 import avatarImage from '../../../../assets/img_avatar.png';
 import cx from 'classnames';
 import { useStores } from '../../../../stores';
-import { ModalType } from '../../../../models/modal';
+import { ModalType } from '../../../../types/modal';
 
 interface UserProfileProps {
   flexDirection?: string;

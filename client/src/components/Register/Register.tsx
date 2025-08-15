@@ -4,7 +4,7 @@ import { InputField } from '../../shared/components/InputField/InputField';
 import { RoundedButton } from '../../shared/components/RoundedButton/RoundedButton';
 import styles from './Register.module.scss';
 import { useStores } from '../../stores';
-import { ModalType } from '../../models/modal';
+import { ModalType } from '../../types/modal';
 import { RegisterRequest } from '../../services';
 import { useModalCleanup } from '../../shared/hooks/useModalCleanup';
 

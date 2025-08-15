@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { RoundedButton } from '../../../../shared/components/RoundedButton/RoundedButton';
 import { observer } from 'mobx-react-lite';
 import { useStores } from '../../../../stores';
-import { ModalType } from '../../../../models/modal';
+import { ModalType } from '../../../../types/modal';
 
 interface AuthButtonsProps {
   flexDirection?: 'row' | 'column';
