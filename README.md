@@ -3,6 +3,7 @@ Courtspot is a sandbox project for testing new ideas in web development [Work in
 - Node.js
 - MySQL
 - React + TS
+- MobX for state management
 
 # Current state of the project
 
